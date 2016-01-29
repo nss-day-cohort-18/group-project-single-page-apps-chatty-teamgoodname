@@ -1,52 +1,18 @@
 # Chatty Group Project
 
-This group project is more about [pair programming](http://www.wikihow.com/Pair-Program) than division of labor. You will all be working on a similar problem and taking turns helping solve it.
+## Setup
 
-You will be creating your first, very simple, single page application (SPA). It will be a very basic implementation of Slack.
+Every teammate copy and run the following commands in the host machine terminal.
 
-## Adding listeners to dynamically created elements
-
-When you add a DOM element to your page with JavaScript, you cannot add a listener to them directly in your code with `addEventListener`. This is because the element didn't exist when your JavaScript file got parsed and executed by the browser when it loaded. What you need to do is listen for the event on the `<body>` element, and then inspect what the target of the event is (i.e. which element the user actually performed the action on).
-
-```js
-document.querySelector("body").addEventListener("click", function(event) {
-  console.log(event);
-
-  // Handle the click event on any li
-  if (event.target.tagName.toLowerCase() === "li") {
-    console.log("You clicked on an <li> element");
-  }
-
-  // Handle the click event on any DOM element with a certain class
-  if (event.target.className === "article-section") {
-    console.log("You clicked on an `article-section` element");
-  }
-
-  // Inspect the `id` property of the event target
-  if (event.target.id === "page-title") {
-    console.log("You clicked on the page-title element");
-  }
-});
-```
-
-## Setting element attributes
-
-You can use JavaScript to [set any attribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute) on a DOM element. You've seen how to add/remove classes with `classList.add()`, `classList.remove()`, and `classList.toggle()`, but you can also add `id`, `href`, `src`, or any other attribute.
-
-Here's an example of how to add a `disabled` attribute to a button in the DOM.
-
-```html
-<button class="clear-messages">Clear messages</button>
-```
-
-```js
-// This will disable the first button with a class of "button-message"
-document.getElementsByClassName("button-message")[0].setAttribute("disabled", true);
+```bash
+mkdir -p ~/workspace/group-projects && cd $_
+git clone [Github Classroom repo URL]
+cd [repo name]
 ```
 
 ## Requirements
 
-Check out the [simple wireframe](https://app.moqups.com/chortlehoort/uGBbLbK46Y/view/page/a9d5cd7bf) for this application on Moqups.com.
+Check out the [simple wireframe](https://app.moqups.com/chortlehoort/uGBbLbK46Y/view/page/a9d5cd7bf) for this application on Moqups.com. You can make your final interface as fancy as you like, but keep the general layout similar to the wireframe.
 
 ### Navigation bar
 
@@ -72,20 +38,71 @@ Check out the [simple wireframe](https://app.moqups.com/chortlehoort/uGBbLbK46Y/
 1. When the delete button next to a message is clicked, only that message should be removed from the DOM.
 1. When the page is first loaded, you must load 5 messages from a local JSON file and pre-fill the message area with those messages.
 
-# Bonus criteria
+### Modular Code
+
+Create multiple IIFEs, following the Single Responsibility Principle, that perform the following functions. The name of your global variable that gets augmented by the IIFEs should be `Chatty`.
+
+1. One IIFE should load the JSON file and returns the array of objects.
+1. One IIFE should accept an element `id`, and the user message, and then add the user's message - along with the delete button - to the specified parent element. Each message should be stored in a private array in this IIFE. This IIFE should expose a function to read all messages, and delete a single message.
+1. One IIFE should accept a message element `id` and then remove the correct element from the DOM. This IIFE should also remove the corresponding message from the private array that was created in the previous IIFE.
+
+## Helpful hints
+
+### Adding listeners to dynamically created elements
+
+When you add a DOM element to your page with JavaScript, you cannot add a listener to them directly in your code with `addEventListener`. This is because the element didn't exist when your JavaScript file got parsed and executed by the browser when it loaded. What you need to do is listen for the event on the `<body>` element, and then inspect what the target of the event is (i.e. which element the user actually performed the action on).
+
+```js
+document.querySelector("body").addEventListener("click", function(event) {
+  console.log(event);
+
+  // Handle the click event on any li
+  if (event.target.tagName.toLowerCase() === "li") {
+    console.log("You clicked on an <li> element");
+  }
+
+  // Handle the click event on any DOM element with a certain class
+  if (event.target.className === "article-section") {
+    console.log("You clicked on an `article-section` element");
+  }
+
+  // Inspect the `id` property of the event target
+  if (event.target.id === "page-title") {
+    console.log("You clicked on the page-title element");
+  }
+});
+```
+
+### Setting element attributes
+
+You can use JavaScript to [set any attribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute) on a DOM element. You've seen how to add/remove classes with `classList.add()`, `classList.remove()`, and `classList.toggle()`, but you can also add `id`, `href`, `src`, or any other attribute.
+
+Here's an example of how to add a `disabled` attribute to a button in the DOM.
+
+```html
+<button class="clear-messages">Clear messages</button>
+```
+
+```js
+// This will disable the first button with a class of "button-message"
+document.getElementsByClassName("button-message")[0].setAttribute("disabled", true);
+```
+
+
+## Bonus criteria
 
 For you overachievers, once you've completed the basic criteria, take a stab at these.
 
-## Multiple JSON files
+### Multiple JSON files
 
 Instead of having one JSON file with five messages in it, break each message into its own JSON file. How do you handle loading them in succession?
 
-## Editing
+### Editing
 
 1. Let users edit an existing message. Add an edit button next to the delete button that, when clicked, will take the message and put it back in the message input at the top.
 1. Once user edits the message and presses the return key again, the message text in the list should be updated.
 
-## Multiple users
+### Multiple users
 
 1. Create an object in your JavaScript that holds an array of names (*see example below*).
 1. Next to the message input box, there should be a radio button group for each name in the list.
@@ -99,11 +116,11 @@ var users = {
 };
 ```
 
-## Message limit
+### Message limit
 
 1. Only show the last 20 messages.
 
-## Timestamp
+### Timestamp
 
 1. Put a timestamp on each message.
 1. Again, this will change the structure of your JSON file.
