@@ -102,6 +102,15 @@ Instead of having one JSON file with five messages in it, break each message int
 1. Let users edit an existing message. Add an edit button next to the delete button that, when clicked, will take the message and put it back in the message input at the top.
 1. Once user edits the message and presses the return key again, the message text in the list should be updated.
 
+### Custom themes
+
+1. Add a button/link to the UI labeled "Change Theme".
+1. Remove the existing elements for changing the theme.
+1. When user click on Change Theme element, show a Bootstrap modal dialog box.
+1. Inside the modal, show two color picker fields - one for background color and one for font color.
+1. Add a *Save* and *Cancel* button to modal.
+1. When user clicks *Save* apply the chosen colors.
+
 ### Multiple users
 
 1. Create an object in your JavaScript that holds an array of names (*see example below*).
