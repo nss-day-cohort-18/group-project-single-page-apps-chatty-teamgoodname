@@ -85,7 +85,7 @@ Here's an example of how to add a `disabled` attribute to a button in the DOM.
 
 ```js
 // This will disable the first button with a class of "button-message"
-document.getElementsByClassName("button-message")[0].setAttribute("disabled", true);
+document.getElementsByClassName("clear-messages")[0].setAttribute("disabled", true);
 ```
 
 
