@@ -1,12 +1,22 @@
 
 nav {
 	display: block;
-	margin-left: 1em;
+	margin: 1em;
+	background-color: lightgrey !important;
+	padding: 1em;
+}
+
+nav a {
+	color: black !important;
+}
+
+#logo-img {
+
 }
 
  .affix {
       top: 0;
-      width: 100%;
+      width: 90%;
   }
 
   .affix + .container-fluid {
@@ -20,22 +30,37 @@ nav {
 }
 
 label {
-	margin-right: 2em;
+	margin-right: .8em;
 }
 
 button {
 	border: 2px solid black;
 	border-radius: 4px;
+	margin: .5em;
+	background-color: lightgreen;
+	height: 3em;
+	width: 12em;
 }
 
-
+input[type="checkbox"] {
+	border: 1px solid grey;
+	background-color: white;
+	height: 15px;
+	width: 15px;
+	padding-left: 2em;
+	margin-left: 1em;
+}
 
 input[type="text"] {
-	width: 80%;
+	width: 70%;
 	height: 40px;
 	border-radius: 3px;
 	border: 1px solid grey;
+	margin: 1em;
+	padding: .5em;
 }
+
+/* Body */
 
 #messageBoardTitle {
 	margin-top: 2em;
@@ -50,12 +75,6 @@ input[type="text"] {
 	margin: 0 3em 3em 3em;
 }
 
-input[type="checkbox"] {
-	border: 1px solid grey;
-	background-color: white;
-	height: 15px;
-	width: 15px;
-}
 
 
 
