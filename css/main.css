@@ -2,7 +2,7 @@
 nav {
 	display: block;
 	margin: 1em;
-	background-color: lightgrey !important;
+	background-color: white !important;
 	padding: 1em;
 }
 
@@ -10,8 +10,9 @@ nav a {
 	color: black !important;
 }
 
-#logo-img {
-
+img {
+	width: 20%;
+	height: 30%;
 }
 
  .affix {
