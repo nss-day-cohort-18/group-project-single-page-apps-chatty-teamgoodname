@@ -1,0 +1,63 @@
+
+nav {
+	display: block;
+	margin-left: 1em;
+}
+
+ .affix {
+      top: 0;
+      width: 100%;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+
+.col-xs-12 {
+	list-style: none;
+	display: inline;
+	margin-left: 2em;
+}
+
+label {
+	margin-right: 2em;
+}
+
+button {
+	border: 2px solid black;
+	border-radius: 4px;
+}
+
+
+
+input[type="text"] {
+	width: 80%;
+	height: 40px;
+	border-radius: 3px;
+	border: 1px solid grey;
+}
+
+#messageBoardTitle {
+	margin-top: 2em;
+	margin-left: 1em;
+	font-size: 20px;
+}
+
+#messageBoard {
+	border: 2px solid black;
+	height: 30em;
+	width: 90%;
+	margin: 0 3em 3em 3em;
+}
+
+input[type="checkbox"] {
+	border: 1px solid grey;
+	background-color: white;
+	height: 15px;
+	width: 15px;
+}
+
+
+
+
+
