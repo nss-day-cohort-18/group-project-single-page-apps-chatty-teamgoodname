@@ -32,13 +32,11 @@ newMessage.addEventListener("keyup", function(event) {
 
 //Event Listener for clearButton - Deactivate clearButton when message list is empty
 var clearButton = document.getElementById("clearButton");
+clearButton.addEventListener("click", function() {
+	document.getElementById("messageBoard").innerHTML = "";
+  });
 
 // clearButton[0].setAttribute("disabled", true);
-
-clearButton.addEventListener("click", function() {
-
-});
-
 
 
 function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSent){
