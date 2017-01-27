@@ -6,7 +6,7 @@ body {
 
 .navbar {
 	display: block !important;
-	max-width: 99%;
+	max-width: 95%;
 	height: 9em;
 	z-index: 1;
 	max-height: 35%;
@@ -39,7 +39,7 @@ nav {
 .affix {
 	top: 0;
 	width: 70em;
-	max-width: 95%;
+	max-width: 94%;
 	max-height: 35%;
 	height: 9em;
     display: block;
@@ -107,7 +107,7 @@ input[type="text"] {
 	height: 30px;
 	border-radius: 5px;
 	background-color: white;
-	margin: 0 1em 0 .5em;
+	margin-right: 1em;
 }
 
 /* MESSAGE SECTION */

@@ -1,16 +1,13 @@
 var newMessage = document.getElementById("newMessage");
 var addMessageButton = document.getElementById("addMessageButton");
 
-//Event Listener for click on 'add message' button//
 addMessageButton.addEventListener("click", function() {
-	console.log("Add message Button works!");
+	console.log("Hi");
 });
 
-//Event Listener for enter key when cursor in message field//
 newMessage.addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode == 13) {
-    	console.log("Enter listener works")
         document.getElementById("addMessageButton").click();
     }
 });
@@ -18,10 +15,10 @@ newMessage.addEventListener("keyup", function(event) {
 //Event Listener for clearButton - Deactivate clearButton when message list is empty
 var clearButton = document.getElementById("clearButton");
 
-//clearButton.[0].setAttribute("disabled" = true);
+clearButton[0].setAttribute("disabled", true);
 
 clearButton.addEventListener("click", function() {
-	document.getElementById("messageBoard").innerHTML = "";
+
 });
 
 // Calls the Chatty method, getMessages(), and puts the returned array
