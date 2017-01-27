@@ -107,7 +107,11 @@ input[type="text"] {
 	font-color: grey;
 	padding: 2em;
 	text-align: left !important;
-	line-height: 1.5em;
+	line-height: 2.3em;
+}
+
+.deleteButton{
+	float: right;
 }
 
 

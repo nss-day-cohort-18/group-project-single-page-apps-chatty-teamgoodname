@@ -42,19 +42,40 @@ function populateMessages(){
 		var newMessageId = "message--" + i.toString();
 		var newButtonId = "button--" + i.toString();
 
-		messageContainer.innerHTML += 	`<div class="col-sm-12" id=${newMessageId}>
-											<strong><p>${messages[i].name}</p></strong>
-											<span><p> -->  ${messages[i].message}</p></span>
-											<input type="button" value="Delete" id=${newButtonId}></input>
-										 </div>
-										`;
+		console.log("Objects: ", messages[i].message);
+		console.log("Name: ", messages[i].name);
+
+		// messageContainer.innerHTML += 	`<div class="col-sm-12" id=${newMessageId}>
+		// 									<strong><p>${messages[i].name}</p></strong>
+		// 									<span><p> -->  ${messages[i].message}</p></span>
+		// 									<input type="button" value="Delete" id=${newButtonId}></input>
+		// 								 </div>
+		// 								`;
 	};
-
-
-	// for(var i = 0; i < messageContainer.childNodes.length; i++){
-	// 	messageContainer.childNodes[i].addEventListener("click", Chatty.deleteThisMessage);
-	// 	console.log("Child: ", messageContainer.childNodes[i]);
-	// 	console.log("ID: ", messageContainer.childNodes[i].id);
-	// };
 	console.log("DOM Populated");
+};
+
+function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSent){
+	// Create <div> element to hold each message
+	var messageElement = document.createElement("DIV");
+	messageElement.id = "message--" + messageIdNumber;
+
+	// Create paragraph element to hold message sender's name
+	var nameElement = document.createElement("P");
+
+	// Create paragraph element to hold the message content
+	var messageTextElement = document.createElement("P");
+
+	// Create paragraph element to hold the time that the message is sent
+	var timeElement = document.createElement("P");
+
+	// Create delete button
+	var deleteButtonElement = document.createElement("BUTTON");
+	deleteButtonElement.id = "delete--" + messageIdNumber;
+
+
+
+
+
+
 }
