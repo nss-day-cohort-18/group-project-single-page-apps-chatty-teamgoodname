@@ -8,24 +8,27 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+	
+	<!-- DEFAULT VIEW -->
+	<div id="default-view">
+		 
+		<header></header id="logoBox" style="display:flex;align-items:center;"><img id="logoImg" src="images/teamgoodNamebetter.jpg"></header><br>
+				
+		<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197"> 
+			<input role="presentation" type="text" placeholder="Enter message"><br>
+			<input role="presentation" type="checkbox" id="dark-theme-select">
+			<label>Dark Theme</label>
+			<input role="presentation" type="checkbox" id="large-text-select">
+			<label>Large Text</label>
+			<button id="clearButton" type="clear">Clear Message Board</button>
+		</nav>
 
-	<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">  
-		<div id="logoImg"><img src="images/teamgoodNamebetter.jpg"></div>
-		<input role="presentation" type="text" placeholder="Enter message" name="">
-		<button id="clearButton" type="clear">Clear Message Board</button><br>
-		
-		<input role="presentation" type="checkbox" id="Dark Theme">
-		<label>Dark Theme</label>
+		<label for="messageBoard" id="messageBoardTitle">Messages:</label>
+		<div name="messageBoard" id="messageBoard" class="col-xs-12 container-fluid">
 			
-		<input role="presentation" type="checkbox" id="Large Text">
-		<label>Large Text</label>
-	</nav>
-	
-	
-	<label for="messageBoard" id="messageBoardTitle">Messages:</label>
-	<div name="messageBoard" id="messageBoard" class="col-xs-12 container-fluid">
-		
+		</div>
 	</div>
+	<!-- END DEFAULT VIEW -->
 
 	<script type="text/javascript" src="javascripts/main.js"></script>
 </body>

@@ -1,23 +1,35 @@
+body {
+	background-color: white;
+}
 
+#nav-items {
+	display: block;
+	border: 1px solid black;
+	margin: auto auto 1em 1em;
+}
+
+/*Regular view*/
 nav {
 	display: block;
 	margin: 1em;
-	background-color: white !important;
+	background-color: #e5e5e5 !important;
 	padding: 1em;
 }
 
-nav a {
-	color: black !important;
+#logoBox {
+	display: block;
 }
 
-img {
-	width: 20%;
-	height: 30%;
+#logoImg {
+	display: block;
+	margin: auto;
+	width: 40%;
+	height: 60%;
 }
 
  .affix {
-      top: 0;
-      width: 90%;
+      top: 2px;
+      width: 70%;
   }
 
   .affix + .container-fluid {
@@ -35,16 +47,17 @@ label {
 }
 
 button {
-	border: 2px solid black;
+	border: 2px solid lightgrey;
 	border-radius: 4px;
-	margin: .5em;
-	background-color: lightgreen;
+	margin: .5em 2em .5em .5em;
+	background-color: #c4ffc8;
 	height: 3em;
 	width: 12em;
+	margin-left: 10%;
 }
 
 input[type="checkbox"] {
-	border: 1px solid grey;
+	border: 1px solid white;
 	background-color: white;
 	height: 15px;
 	width: 15px;
@@ -53,31 +66,41 @@ input[type="checkbox"] {
 }
 
 input[type="text"] {
-	width: 70%;
+	width: 90%;
 	height: 40px;
 	border-radius: 3px;
-	border: 1px solid grey;
+	border: 1px solid lightgrey;
 	margin: 1em;
 	padding: .5em;
 }
 
-/* Body */
+/* MESSAGE SECTION */
 
 #messageBoardTitle {
 	margin-top: 2em;
 	margin-left: 1em;
 	font-size: 20px;
+	text-align: left;
 }
 
 #messageBoard {
-	border: 2px solid black;
-	height: 30em;
-	width: 90%;
-	margin: 0 3em 3em 3em;
+	border: 2px solid lightgray;
+	height: 40em;
+	width: 80%;
+	margin: 0 5em 3em 5em;
+	background-color: white;
+	font-color: grey;
 }
 
 
+/* DARK THemes */
 
+
+
+
+
+
+/* LARGE TEXT VIEW**/
 
 
 
