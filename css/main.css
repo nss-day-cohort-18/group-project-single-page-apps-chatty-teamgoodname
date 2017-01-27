@@ -95,6 +95,7 @@ input[type="text"] {
 	margin-left: 1em;
 	font-size: 20px;
 	text-align: left;
+	display: block;
 }
 
 #messageBoard {
