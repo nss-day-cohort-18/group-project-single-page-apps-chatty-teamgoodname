@@ -19,7 +19,7 @@ addMessageButton.addEventListener("click", function() {
 	var time = today.getHours() + ":" + today.getMinutes() + " pm";
 
 	console.log("New Message: ", idIndex + "Name: " + nameOfSender + "\nMessage: " + messageText);
-	console.log("New Stuff: ", Chatty.addMessage(idIndex, nameOfSender, messageText, time));
+
 
 });
 
