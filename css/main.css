@@ -7,7 +7,6 @@ body {
 .navbar {
 	display: block !important;
 	max-width: 95%;
-	height: 10em;
 	z-index: 1;
 	max-height: 35%;
 }
@@ -18,6 +17,7 @@ nav {
 	margin: 1em;
 	background-color: #e5e5e5 !important;
 	padding: .5em;
+	height: 100% !important;
 }
 
 #logoBox {
@@ -78,17 +78,19 @@ input[type="checkbox"] {
 }
 
 input[type="text"] {
-	width: 30em;
-	max-width: 50%;
+	width: 35em;
+	max-width: 40%;
+	min-width: 20%;
 	height: 40px;
 	border-radius: 3px;
 	border: 1px solid lightgrey;
-	margin: 1em;
+	margin: .5em;
 	padding: .5em;
 }
 
 #newMessageName {
-	width: 20em;
+	width: 25em;
+	margin-left: 1em;
 }
 
 #addMessageButton {
@@ -97,6 +99,7 @@ input[type="text"] {
 	height: 30px;
 	border-radius: 5px;
 	background-color: white;
+	margin-right: 1em;
 }
 
 /* MESSAGE SECTION */

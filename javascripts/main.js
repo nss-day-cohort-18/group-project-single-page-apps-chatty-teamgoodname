@@ -1,8 +1,3 @@
-
-document.getElementById("messageBoard").innerHTML = "MY MESSAGE BLAH  BLAH BLAH BLAH";
-
-
-
 var newMessage = document.getElementById("newMessage");
 var addMessageButton = document.getElementById("addMessageButton");
 
@@ -25,7 +20,6 @@ clearButton[0].setAttribute("disabled", true);
 clearButton.addEventListener("click", function() {
 
 });
-
 
 // Calls the Chatty method, getMessages(), and puts the returned array
 // 	of message objects into the HTML container 
@@ -100,3 +94,4 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 
 	return messageElement;
 }
+
