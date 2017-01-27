@@ -1,5 +1,14 @@
 body {
 	background-color: white;
+	margin: 1em;
+}
+
+.navbar {
+	display: block !important;
+	max-width: 95%;
+	height: 11em;
+	z-index: 1;
+	max-height: 35%;
 }
 
 #nav-items {
@@ -18,6 +27,7 @@ nav {
 
 #logoBox {
 	display: block;
+	margin-top: 1em;
 }
 
 #logoImg {
@@ -27,13 +37,19 @@ nav {
 	height: 60%;
 }
 
- .affix {
-      top: 2px;
-      width: 70%;
+.affix {
+	top: 0;
+	max-width: 95%;
+    display: block;
+	margin: 1em;
+	background-color: #e5e5e5;
+	padding: 1em;
   }
 
   .affix + .container-fluid {
-      padding-top: 70px;
+    padding-top: 70px;
+    max-width: 95%;
+    margin-right: 1;
   }
 
 .col-xs-12 {
@@ -49,11 +65,10 @@ label {
 button {
 	border: 2px solid lightgrey;
 	border-radius: 4px;
-	margin: .5em 2em .5em .5em;
+	margin: .5em 2em .5em 5em;
 	background-color: #c4ffc8;
 	height: 3em;
 	width: 12em;
-	margin-left: 10%;
 }
 
 input[type="checkbox"] {
@@ -66,7 +81,8 @@ input[type="checkbox"] {
 }
 
 input[type="text"] {
-	width: 90%;
+	width: 50em;
+	max-width: 95%;
 	height: 40px;
 	border-radius: 3px;
 	border: 1px solid lightgrey;
@@ -77,7 +93,7 @@ input[type="text"] {
 /* MESSAGE SECTION */
 
 #messageBoardTitle {
-	margin-top: 2em;
+	margin-right: 1em;
 	margin-left: 1em;
 	font-size: 20px;
 	text-align: left;
@@ -85,11 +101,12 @@ input[type="text"] {
 
 #messageBoard {
 	border: 2px solid lightgray;
-	height: 40em;
+	height: 80em;
 	width: 80%;
-	margin: 0 5em 3em 5em;
+	margin: 1em 7em 3em 5em;
 	background-color: white;
 	font-color: grey;
+	padding: 2em;
 }
 
 
