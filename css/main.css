@@ -1,28 +1,24 @@
 body {
 	background-color: white;
 	margin: 1em;
+	font-family: 'Varela Round', sans-serif;
 }
 
 .navbar {
 	display: block !important;
 	max-width: 95%;
-	height: 11em;
+	height: 10em;
 	z-index: 1;
 	max-height: 35%;
 }
 
-#nav-items {
-	display: block;
-	border: 1px solid black;
-	margin: auto auto 1em 1em;
-}
 
 /*Regular view*/
 nav {
 	display: block;
 	margin: 1em;
 	background-color: #e5e5e5 !important;
-	padding: 1em;
+	padding: .5em;
 }
 
 #logoBox {
@@ -39,17 +35,19 @@ nav {
 
 .affix {
 	top: 0;
-	max-width: 95%;
+	width: 70em;
+	max-width: 94%;
     display: block;
 	margin: 1em;
 	background-color: #e5e5e5;
-	padding: 1em;
+	padding: .5em;
+	border-radius: 5px;
   }
 
   .affix + .container-fluid {
-    padding-top: 70px;
-    max-width: 95%;
-    margin-right: 1;
+    padding-top: 5px;
+    max-width: 99%;
+    margin-right: 1em;
   }
 
 .col-xs-12 {
@@ -107,6 +105,8 @@ input[type="text"] {
 	background-color: white;
 	font-color: grey;
 	padding: 2em;
+	text-align: left !important;
+	line-height: 1.5em;
 }
 
 
