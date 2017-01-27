@@ -12,7 +12,6 @@ body {
 	max-height: 35%;
 }
 
-
 /*Regular view*/
 nav {
 	display: block;
@@ -60,7 +59,7 @@ label {
 	margin-right: .8em;
 }
 
-button {
+#clearButton {
 	border: 2px solid lightgrey;
 	border-radius: 4px;
 	margin: .5em 2em .5em 5em;
@@ -75,17 +74,29 @@ input[type="checkbox"] {
 	height: 15px;
 	width: 15px;
 	padding-left: 2em;
-	margin-left: 1em;
+	margin-left: 2em;
 }
 
 input[type="text"] {
-	width: 50em;
-	max-width: 95%;
+	width: 30em;
+	max-width: 50%;
 	height: 40px;
 	border-radius: 3px;
 	border: 1px solid lightgrey;
 	margin: 1em;
 	padding: .5em;
+}
+
+#newMessageName {
+	width: 20em;
+}
+
+#addMessageButton {
+	border-color: grey;
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: white;
 }
 
 /* MESSAGE SECTION */

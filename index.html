@@ -10,9 +10,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/main.css"></head>
 <body>
-	
-	<!-- START DEFAULT VIEW -->
-	<div id="default-view">
 
 		<div class="container-fluid">
 			<header id="logoBox"><a href="index.html"><img id="logoImg" src="images/teamgoodNamebetter.jpg"></a></header><br>
@@ -20,7 +17,10 @@
 				
 		<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197"> 
 			<div class="nav navbar-nav">
-				<input role="presentation" type="text" placeholder="Enter message"><br>
+				<input role="presentation" id="newMessageName" type="text" placeholder="Enter your name">
+				<input role="presentation" id="newMessage" type="text" placeholder="Enter message">
+				<button id="addMessageButton">+</button><br>
+				
 				<input role="presentation" type="checkbox" id="dark-theme-select">
 				<label>Dark Theme</label>
 				<input role="presentation" type="checkbox" id="large-text-select">
@@ -64,31 +64,10 @@
 						<input style="display:inline" type="button" value="Delete" id="buttonId" class="deleteButton"></input>
 						<p><small>6:09 pm</small></p>
 					</div>
-					
+			</div>
 
-
-
-				</div>	
-	
-	</div>
-	<!-- END DEFAULT VIEW -->
-
-	<!-- START DARK THEME VIEW -->
-	<div id="dark-view">
-
-
-		
-	</div>
-	<!-- END DARK THEME VIEW -->
-
-	<!-- START LARGE TEXT VIEW -->
-	<div id="large-view">
-
-	
-		
-	</div>
-	<!-- END DARK THEME VIEW -->
 
 	<script type="text/javascript" src="javascripts/iife1.js"></script>
+	<script type="text/javascript" src="javascripts/main.js"></script>
 </body>
 </html>
