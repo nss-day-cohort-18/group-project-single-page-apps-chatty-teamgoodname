@@ -18,5 +18,4 @@ var clearButton = document.getElementById("clearButton");
 clearButton[0].setAttribute("disabled", true);
 
 clearButton.addEventListener("click", function() {
-
 });
