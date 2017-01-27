@@ -51,10 +51,10 @@ function populateMessages(){
 	};
 
 
-	for(var i = 0; i < messageContainer.childNodes.length; i++){
-		messageContainer.childNodes[i].addEventListener("click", Chatty.deleteThisMessage);
-		console.log("Child: ", messageContainer.childNodes[i]);
-		console.log("ID: ", messageContainer.childNodes[i].id);
-	};
+	// for(var i = 0; i < messageContainer.childNodes.length; i++){
+	// 	messageContainer.childNodes[i].addEventListener("click", Chatty.deleteThisMessage);
+	// 	console.log("Child: ", messageContainer.childNodes[i]);
+	// 	console.log("ID: ", messageContainer.childNodes[i].id);
+	// };
 	console.log("DOM Populated");
 }
