@@ -1,0 +1,19 @@
+'cmd + d' marks a task as done
+
+Tasks:
+
+  CSS:
+    ☐ Sticky Header
+    ☐ Dark Theme Option
+    ☐ Large Text Option
+
+  Javascript:
+    ☐ Load JSON messages into messages container on load
+    ☐ Clear all messages button
+         ☐ If there are no messages, disable the button
+    ☐ Enter key (if in the input box) event listener to add message
+    ☐ Delete button for each message
+    IIFEs:
+        ☐ One IIFE should load the JSON file and return the array of objects
+        ☐ One IIFE should contain a function that accepts an element `id`, and the user    message, and then add the user's message - along with the delete button - to the specified parent element. Each message should be stored in a private array in this IIFE. This IIFE should also expose a function to read all messages, and delete a single message.
+        ☐ One IIFE should accept a message element `id` and then remove the correct element from the DOM. This IIFE should also remove the corresponding message from the private array that was created in the previous IIFE.
