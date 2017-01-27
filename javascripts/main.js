@@ -1,8 +1,26 @@
-var newMessage = document.getElementById("newMessage");
-var addMessageButton = document.getElementById("addMessageButton");
 
+var addMessageButton = document.getElementById("addMessageButton");
+var messageContainer = document.getElementById("messageBoard");
+
+// Add new message event listener
 addMessageButton.addEventListener("click", function() {
-	console.log("Hi");
+	var newMessage = document.getElementById("newMessage");
+	var newMessageSenderName = document.getElementById("newMessageName");
+
+
+	// Get new message ID
+	var idIndex = messageContainer.children.length + 1;
+	// Get name
+	var nameOfSender = newMessageSenderName.value;
+	// Get message text
+	var messageText = newMessage.value;
+	// Get Time
+	var today = new Date();
+	var time = today.getHours() + ":" + today.getMinutes() + " pm";
+
+	console.log("New Message: ", idIndex + "Name: " + nameOfSender + "\nMessage: " + messageText);
+	console.log("New Stuff: ", Chatty.addMessage(idIndex, nameOfSender, messageText, time));
+
 });
 
 newMessage.addEventListener("keyup", function(event) {
@@ -15,38 +33,17 @@ newMessage.addEventListener("keyup", function(event) {
 //Event Listener for clearButton - Deactivate clearButton when message list is empty
 var clearButton = document.getElementById("clearButton");
 
-clearButton[0].setAttribute("disabled", true);
+// clearButton[0].setAttribute("disabled", true);
 
 clearButton.addEventListener("click", function() {
 
 });
 
-// Calls the Chatty method, getMessages(), and puts the returned array
-// 	of message objects into the HTML container 
-function populateMessages(){
-	var messageContainer = document.getElementById("messageBoard");
-	var messages = Chatty.getMessages();
-
-	messageContainer.innerHTML = "";
-
-	console.log("About to Populate Messages into DOM:\n", messages);
-
-	for(var i = 0 ; i < messages.length; i++){
-		var newMessageId = "message--" + i.toString();
-		var newButtonId = "button--" + i.toString();
-
-		console.log("Objects: ", messages[i].message);
-		console.log("Name: ", messages[i].name);
-
-		var newMessage = createMessageElement(i, messages[i].name, messages[i].message, messages[i].time);
-
-		messageContainer.appendChild(newMessage);
-	};
-	console.log("DOM Populated");
-};
 
 
 function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSent){
+
+
 	// Create <div> element to hold each message
 	var messageElement = document.createElement("DIV");
 
@@ -57,7 +54,7 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	var nameElement = document.createElement("P");
 	nameElement.className = "messageElement";
 	nameElement.style.display = "inline";
-	nameElement.innerHTML = nameOfPerson.bold() + " -->  ";
+	nameElement.innerHTML = nameOfPerson/*.bold()*/ + " -->  ";
 
 	// Create paragraph element to hold the message content
 	var messageTextElement = document.createElement("P");
@@ -76,7 +73,7 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	deleteButtonElement.value = "Delete";
 	deleteButtonElement.style.marginTop = "1%";
 
-
+	// deleteButtonElement.addEventListener("click", deleteButton);
 
 	// Create paragraph element to hold the time that the message is sent
 	var timeElement = document.createElement("P");
@@ -93,5 +90,5 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	messageElement.appendChild(timeElement);
 
 	return messageElement;
-}
+};
 
