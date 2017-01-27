@@ -7,8 +7,13 @@ body {
 .navbar {
 	display: block !important;
 	max-width: 95%;
+	height: 9em;
 	z-index: 1;
 	max-height: 35%;
+}
+
+.navbar-inverse {
+	max-height: 35%
 }
 
 /*Regular view*/
@@ -17,7 +22,6 @@ nav {
 	margin: 1em;
 	background-color: #e5e5e5 !important;
 	padding: .5em;
-	height: 100% !important;
 }
 
 #logoBox {
@@ -36,6 +40,8 @@ nav {
 	top: 0;
 	width: 70em;
 	max-width: 94%;
+	max-height: 35%;
+	height: 9em;
     display: block;
 	margin: 1em;
 	background-color: #e5e5e5;
@@ -46,6 +52,8 @@ nav {
   .affix + .container-fluid {
     padding-top: 5px;
     max-width: 99%;
+    max-height: 35%;
+    height: 9em;
     margin-right: 1em;
   }
 
