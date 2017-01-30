@@ -11,7 +11,7 @@ request.send();
 var Chatty = (function(){
 	var jsonMessages = [];
 		return {
-			getMessages: function(){
+			getJsonMessages: function(){
 				return jsonMessages;
 			},
 			setInitialMessages: function(messages){
@@ -36,11 +36,13 @@ function requestCompleted(event){
 
 // Populate messages is called, but we can't createMessageElement until page2 is loaded
 function populateInitialMessages(){
-	var messages = Chatty.getMessages();
+	var messages = Chatty.getJsonMessages();
 
 	messageContainer.innerHTML = "";
 
 	console.log("About to Populate Messages into DOM:\n", messages);
+
+	Chatty.getUserMessages();
 
 	for(var i = 0 ; i < messages.length; i++){
 		var newMessageId = "message--" + i.toString();
@@ -50,6 +52,8 @@ function populateInitialMessages(){
 		var newMessage = createMessageElement(i, messages[i].name, messages[i].message, messages[i].time);
 
 		messageContainer.appendChild(newMessage);
+
+		document.getElementById("delete--" + i).addEventListener("click", Chatty.deleteOneMessage);
 	};
 	console.log("DOM Populated");
 };
