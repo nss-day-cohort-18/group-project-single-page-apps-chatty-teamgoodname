@@ -16,8 +16,6 @@ var Chatty = (function(oldChatty){
 		for(var i = 0; i < userMessages.length; i++){
 			if("delete--" + userMessages[i].id == event.target.id){
 				userMessages.splice(i, 1);
-				var divToDelete = document.getElementById("message--" + i);
-				divToDelete.parentNode.removeChild(divToDelete);
 				console.log("NEW: ", userMessages);
 			}
 		}
@@ -28,17 +26,6 @@ var Chatty = (function(oldChatty){
 			userMessages[i].id = i;
 		}
 
-
-		// Reset IDs in the DOM
-		// Doesnt work yet
-		var children = messageContainer.childNodes;
-		for(var i = 0; i < children.length; i++){
-			var childOfChild = children[i].childNodes;
-			console.log("ChildOfChild: ", childOfChild);
-
-			children[i].id = "message--" + i;
-			childOfChild[3].id = "delete--" + i;
-		}
 
 	};
 	oldChatty.addMessage = function(id, nameOf, messageText, time){
