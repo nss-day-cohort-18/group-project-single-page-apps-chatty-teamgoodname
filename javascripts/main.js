@@ -8,8 +8,6 @@ request.addEventListener("load", requestCompleted);
 request.open("GET", "chatty.json");
 request.send();
 
-
-
 // Event handler for when JSON file is loaded
 function requestCompleted(event){
 	var tempJsonMessages = JSON.parse(event.target.responseText);
@@ -118,13 +116,25 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	deleteButtonElement.value = "Delete";
 	deleteButtonElement.style.marginTop = "1%";
 
+	var readMessageButton = document.createElement("INPUT");
+	readMessageButton.type="button";
+	readMessageButton.id="read--" + messageIdNumber;
+	readMessageButton.style.display = "inline";
+	readMessageButton.style.float= "right";
+	readMessageButton.value = "Read Message";
+	readMessageButton.style.marginBottom = "1%";
+
 	// Chatty.getUserMessages();
 	deleteButtonElement.addEventListener("click", Chatty.deleteOneMessageFromArray);
 	deleteButtonElement.addEventListener("click", Chatty.deleteOneMessageFromDOM);
+	readMessageButton.addEventListener("click", Chatty.readMessage);
+
+
 
 	// Create paragraph element to hold the time that the message is sent
 	var timeElement = document.createElement("P");
 	timeElement.innerHTML = timeSent;
+	timeElement.style.display = "block";
 
 	messageElement.style.marginTop = "1%";
 	messageElement.style.marginBottom = "1%";
@@ -135,6 +145,7 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	messageElement.appendChild(messageTextElement);
 	messageElement.appendChild(deleteButtonElement);
 	messageElement.appendChild(timeElement);
+	messageElement.appendChild(readMessageButton);
 
 	
 
@@ -156,8 +167,13 @@ function populateMessages(messages){
 
 		messageContainer.appendChild(newMessage);
 
-		document.getElementById("delete--" + i).addEventListener("click", Chatty.deleteOneMessageFromArray);
-	};
+		//document.getElementById("delete--" + i).addEventListener("click", Chatty.deleteOneMessageFromArray);
+
+	}
 	console.log("DOM Populated");
+
 };
+
+
+
 
