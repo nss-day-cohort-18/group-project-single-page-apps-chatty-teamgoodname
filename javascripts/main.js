@@ -97,7 +97,7 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	var nameElement = document.createElement("P");
 	nameElement.className = "messageElement";
 	nameElement.style.display = "inline";
-	nameElement.innerHTML = nameOfPerson/*.bold()*/ + " -->  ";
+	nameElement.innerHTML = nameOfPerson/*.bold()*/ + " wrote: ";
 
 	// Create paragraph element to hold the message content
 	var messageTextElement = document.createElement("P");
