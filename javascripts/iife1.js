@@ -1,4 +1,3 @@
-console.log("111111111111");
 
 var request = new XMLHttpRequest();
 
@@ -17,19 +16,19 @@ var Chatty = (function(){
 			setInitialMessages: function(messages){
 				jsonMessages = messages;
 			},
-			addMessageObject: function(message){
-				jsonMessages.push(message);
-			}
 		};
 })(Chatty || {});
 
 
 // Event handler for when JSON file is loaded
 function requestCompleted(event){
-	console.log("REQUEST COMPLETE");
 	var tempJsonMessages = JSON.parse(event.target.responseText);
 	// Load the JSON messages into the Chatty oject
 	Chatty.setInitialMessages(tempJsonMessages);
+
+	// Load JsonMessages into userMessages
+	Chatty.passJsonMessages();
+
 	// Populate the DOM (function in main.js)
 	populateInitialMessages();
 };
@@ -41,8 +40,6 @@ function populateInitialMessages(){
 	messageContainer.innerHTML = "";
 
 	console.log("About to Populate Messages into DOM:\n", messages);
-
-	Chatty.getUserMessages();
 
 	for(var i = 0 ; i < messages.length; i++){
 		var newMessageId = "message--" + i.toString();
