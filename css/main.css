@@ -6,6 +6,7 @@ body {
 
 .navbar {
 	display: block !important;
+	width: 80em;
 	max-width: 94%;
 	height: 9em;
 	z-index: 1;
@@ -39,7 +40,8 @@ nav {
 .affix {
 	top: 0;
 	width: 80em;
-	max-width: 92%;
+	max-width: 93%;
+	margin-top: .5em;
   }
 
   .affix + .container-fluid {
