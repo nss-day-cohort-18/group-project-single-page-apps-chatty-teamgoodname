@@ -7,7 +7,7 @@ var Chatty = (function(oldChatty){
 	var messageContainer = document.getElementById("messageBoard");
 	var userMessages = [];
 
-	oldChatty.deleteOneMessage = function(event){
+	oldChatty.deleteOneMessageFromArray = function(event){
 		console.log("User Msgs: ", userMessages);
 
 
@@ -26,19 +26,22 @@ var Chatty = (function(oldChatty){
 	};
 	oldChatty.addMessage = function(id, nameOf, messageText, time){
 		var messages = oldChatty.getJsonMessages();
-		var newElement = createMessageElement(id, nameOf, messageText, time);
+		// var newElement = createMessageElement(id, nameOf, messageText, time);
 		var newMessageObject = {
 			message: messageText,
 			name: nameOf,
 			time: time,
 			id: id
 		}
-		document.getElementById("messageBoard").appendChild(newElement);
+		// document.getElementById("messageBoard").appendChild(newElement);
 		userMessages.push(newMessageObject);
 	};
 	oldChatty.passJsonMessages = function(){
 		userMessages = oldChatty.getJsonMessages();
 	};
+	oldChatty.getCurrentMessages = function(){
+		return userMessages;
+	}
 
 	return oldChatty;
 })(Chatty || {});

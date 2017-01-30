@@ -1,11 +1,35 @@
 var addMessageButton = document.getElementById("addMessageButton");
 var messageContainer = document.getElementById("messageBoard");
 
+var request = new XMLHttpRequest();
+
+request.addEventListener("load", requestCompleted);
+
+request.open("GET", "chatty.json");
+request.send();
+
+
+
+// Event handler for when JSON file is loaded
+function requestCompleted(event){
+	var tempJsonMessages = JSON.parse(event.target.responseText);
+	// Load the JSON messages into the Chatty oject
+	Chatty.setInitialMessages(tempJsonMessages);
+
+	// Load JsonMessages into userMessages
+	Chatty.passJsonMessages();
+
+	// Populate the DOM (function in main.js)
+	populateMessages(Chatty.getJsonMessages());
+	// populateInitialMessages();
+};
+
+
+
 // Add new message event listener
 addMessageButton.addEventListener("click", function() {
 	var newMessage = document.getElementById("newMessage");
 	var newMessageSenderName = document.getElementById("newMessageName");
-
 
 	// Get new message ID
 	var idIndex = messageContainer.children.length;
@@ -18,8 +42,8 @@ addMessageButton.addEventListener("click", function() {
 	var time = today.getHours() + ":" + today.getMinutes() + " pm";
 
 	Chatty.addMessage(idIndex, nameOfSender, messageText, time);
+	Chatty.populateDOM(idIndex, nameOfSender, messageText, time);
 });
-
 
 // Event Listener for darkCheck and largeCheck- Change theme from light to dark and make font large
  var darkCheck = document.getElementById("dark-theme-select");
@@ -31,22 +55,21 @@ addMessageButton.addEventListener("click", function() {
 ////// Function that toggles the background and text colors
  function makeDark(tomato) {
  	console.log('makeDark wants to run');
- 	container.classList.toggle('dark')
+ 	messageContainer.classList.toggle("dark");
  	//debugger
  	var children = container.children;
  	for (var i = 0;i < children.length; i++) {
- 		children[i].classlist.toggle('dark')	
+ 		children[i].classList.toggle("dark");	
  	};
  };
- 
  ////// Function that toggles the font size of the messages
  function makeLarge(tomato){
  	console.log("makeLarge wants to run");
      var listOfMessages = document.getElementById("messageBoard");
      listOfMessages.classList.toggle("large-font");
      var children = container.children;
- 	for (var i = 0;i < children.length; i++) {
- 		children[i].classlist.toggle('dark')	
+ 	for (var i = 0; i < children.length; i++) {
+ 		children[i].classList.toggle("large-font");	
  	};
  };
 
@@ -64,12 +87,7 @@ clearButton.addEventListener("click", function() {
 	document.getElementById("messageBoard").innerHTML = "";
   });
 
-// clearButton[0].setAttribute("disabled", true);
-
-
 function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSent){
-
-
 	// Create <div> element to hold each message
 	var messageElement = document.createElement("DIV");
 
@@ -101,7 +119,8 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	deleteButtonElement.style.marginTop = "1%";
 
 	// Chatty.getUserMessages();
-	deleteButtonElement.addEventListener("click", Chatty.deleteOneMessage);
+	deleteButtonElement.addEventListener("click", Chatty.deleteOneMessageFromArray);
+	deleteButtonElement.addEventListener("click", Chatty.deleteOneMessageFromDOM);
 
 	// Create paragraph element to hold the time that the message is sent
 	var timeElement = document.createElement("P");
@@ -121,3 +140,24 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 
 	return messageElement;
 };
+
+// Populate messages is called, but we can't createMessageElement until page2 is loaded
+function populateMessages(messages){
+	messageContainer.innerHTML = "";
+
+	console.log("About to Populate Messages into DOM:\n", messages);
+
+	for(var i = 0 ; i < messages.length; i++){
+		var newMessageId = "message--" + i.toString();
+		var newButtonId = "button--" + i.toString();
+
+		// Calls Chatty method to create a new <div> element that contains the formatted message
+		var newMessage = createMessageElement(i, messages[i].name, messages[i].message, messages[i].time);
+
+		messageContainer.appendChild(newMessage);
+
+		document.getElementById("delete--" + i).addEventListener("click", Chatty.deleteOneMessageFromArray);
+	};
+	console.log("DOM Populated");
+};
+
