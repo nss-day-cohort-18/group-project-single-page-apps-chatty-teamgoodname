@@ -1,4 +1,3 @@
-
 var addMessageButton = document.getElementById("addMessageButton");
 var messageContainer = document.getElementById("messageBoard");
 
@@ -9,7 +8,7 @@ addMessageButton.addEventListener("click", function() {
 
 
 	// Get new message ID
-	var idIndex = messageContainer.children.length + 1;
+	var idIndex = messageContainer.children.length;
 	// Get name
 	var nameOfSender = newMessageSenderName.value;
 	// Get message text
@@ -18,9 +17,7 @@ addMessageButton.addEventListener("click", function() {
 	var today = new Date();
 	var time = today.getHours() + ":" + today.getMinutes() + " pm";
 
-	console.log("New Message: ", idIndex + "Name: " + nameOfSender + "\nMessage: " + messageText);
-	console.log("New Stuff: ", Chatty.addMessage(idIndex, nameOfSender, messageText, time));
-
+	Chatty.addMessage(idIndex, nameOfSender, messageText, time);
 });
 
 newMessage.addEventListener("keyup", function(event) {
@@ -29,36 +26,6 @@ newMessage.addEventListener("keyup", function(event) {
         document.getElementById("addMessageButton").click();
     }
 });
-
-// Event Listener for darkCheck and largeCheck- Change theme from light to dark and make font large
-var darkCheck = document.getElementById("dark-theme-select");
-var largeCheck = document.getElementById("large-text-select");
-
-darkCheck.addEventListener("click", makeDark);
-largeCheck.addEventListener("click", makeLarge);
-
-////// Function that toggles the background and text colors
-function makeDark(tomato) {
-	console.log('makeDark wants to run');
-	container.classList.toggle('dark')
-	//debugger
-	var children = container.children;
-	for (var i = 0;i < children.length; i++) {
-		children[i].classlist.toggle('dark')	
-	};
-};
-
-////// Function that toggles the font size of the messages
-function makeLarge(tomato){
-	console.log("makeLarge wants to run");
-    var listOfMessages = document.getElementById("messageBoard");
-    listOfMessages.classList.toggle("large-font");
-    var children = container.children;
-	for (var i = 0;i < children.length; i++) {
-		children[i].classlist.toggle('dark')	
-	};
-};
-
 
 //Event Listener for clearButton - Deactivate clearButton when message list is empty
 var clearButton = document.getElementById("clearButton");
@@ -74,6 +41,7 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 
 	// Create <div> element to hold each message
 	var messageElement = document.createElement("DIV");
+
 
 	messageElement.id = "message--" + messageIdNumber;
 	messageElement.className = "col-sm-12";
@@ -101,7 +69,8 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	deleteButtonElement.value = "Delete";
 	deleteButtonElement.style.marginTop = "1%";
 
-	// deleteButtonElement.addEventListener("click", deleteButton);
+	// Chatty.getUserMessages();
+	deleteButtonElement.addEventListener("click", Chatty.deleteOneMessage);
 
 	// Create paragraph element to hold the time that the message is sent
 	var timeElement = document.createElement("P");
@@ -117,6 +86,7 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	messageElement.appendChild(deleteButtonElement);
 	messageElement.appendChild(timeElement);
 
+	
+
 	return messageElement;
 };
-
