@@ -20,6 +20,14 @@ addMessageButton.addEventListener("click", function() {
 	Chatty.addMessage(idIndex, nameOfSender, messageText, time);
 });
 
+
+// Event Listener for darkCheck and largeCheck- Change theme from light to dark and make font large
+ var darkCheck = document.getElementById("dark-theme-select");
+ var largeCheck = document.getElementById("large-text-select");
+ 
+ darkCheck.addEventListener("click", makeDark);
+ largeCheck.addEventListener("click", makeLarge);
+ 
 ////// Function that toggles the background and text colors
  function makeDark(tomato) {
  	console.log('makeDark wants to run');
