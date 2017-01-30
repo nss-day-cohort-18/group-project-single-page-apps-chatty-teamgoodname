@@ -20,6 +20,29 @@ addMessageButton.addEventListener("click", function() {
 	Chatty.addMessage(idIndex, nameOfSender, messageText, time);
 });
 
+////// Function that toggles the background and text colors
+ function makeDark(tomato) {
+ 	console.log('makeDark wants to run');
+ 	container.classList.toggle('dark')
+ 	//debugger
+ 	var children = container.children;
+ 	for (var i = 0;i < children.length; i++) {
+ 		children[i].classlist.toggle('dark')	
+ 	};
+ };
+ 
+ ////// Function that toggles the font size of the messages
+ function makeLarge(tomato){
+ 	console.log("makeLarge wants to run");
+     var listOfMessages = document.getElementById("messageBoard");
+     listOfMessages.classList.toggle("large-font");
+     var children = container.children;
+ 	for (var i = 0;i < children.length; i++) {
+ 		children[i].classlist.toggle('dark')	
+ 	};
+ };
+
+
 newMessage.addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode == 13) {
