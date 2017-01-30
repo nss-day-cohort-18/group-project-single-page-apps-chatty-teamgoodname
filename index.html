@@ -3,50 +3,61 @@
 <head>
 	<title>Chatty Group Project</title>
 	<meta charset="utf-8">
-	<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
 
-		<div class="container-fluid">
-			<header id="logoBox"><a href="index.html"><img id="logoImg" src="images/teamgoodNamebetter.jpg"></a></header><br>
-		</div>
-				
-		<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="282"> 
-			<div class="nav navbar-nav">
-				<input role="presentation" id="newMessageName" type="text" placeholder="Enter your name">
-				<input role="presentation" id="newMessage" type="text" placeholder="Enter message">
-				<button id="addMessageButton">+</button><br>
-				
-				<input role="presentation" type="checkbox" id="dark-theme-select">
-				<label>Dark Theme</label>
-				<input role="presentation" type="checkbox" id="large-text-select">
-				<label>Large Text</label>
-				<button id="clearButton" type="clear">Clear Message Board</button>
-			</div>
-		</nav>
-		
-			<div class="container-fluid"> 
-				<label for="messageBoard" id="messageBoardTitle">Messages:</label>
-				<div name="messageBoard" id="messageBoard" class="col-xs-12 container-fluid">
+</head>
+<body id="container" >
 
-					<div class="col-sm-12" id=${newMessageId}>
-						<p style="display:inline"><strong>John</strong></p>
-						<p style="display:inline"> --> Hey whats up</p>
-						<input style="display:inline" type="button" value="Delete" id="buttonId" class="deleteButton"></input>
-						<p><small>6:09 pm</small></p>
-					</div>
-				</div>
-			</div>		
+	<div class="container-fluid">
+		<header id="logoBox">
+		<a href="index.html"><img id="logoImg" src="images/teamgoodName.png"></a>
+    </header></br>
+	</div>	
+			
+	<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197"> 
+		<div class="nav navbar-nav">
+			<input role="presentation" id="newMessageName" type="text" placeholder="Enter your name">
+			<input role="presentation" id="newMessage" type="text" placeholder="Enter message">
+			<button id="addMessageButton">+</button><br>
+			
+			<input role="presentation" type="checkbox" id="dark-theme-select">
+			<label>Dark Theme</label>
+			<input role="presentation" type="checkbox" id="large-text-select">
+			<label>Large Text</label>
+			<button id="clearButton" type="clear">Clear Message Board</button>
+		</div>
+	</nav>
+
+	<div class="container-fluid"> 
+		<label for="messageBoard" id="messageBoardTitle">Messages:</label>
+		<div name="messageBoard" id="messageBoard" class="col-xs-12 container-fluid">
+
+			<div class="col-sm-12" id=${newMessageId}>
+				<p style="display:inline"><strong>John</strong></p>
+				<p style="display:inline"> --> Hey whats up</p>
+				<input style="display:inline" type="button" value="Delete" id="buttonId" class="deleteButton"></input>
+				<p><small>6:09 pm</small></p>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
 	<script type="text/javascript" src="javascripts/iife1.js"></script>	
 	<script type="text/javascript" src="javascripts/iife2.js"></script>
 	<script type="text/javascript" src="javascripts/main.js"></script>
-			
-
 </body>
 </html>

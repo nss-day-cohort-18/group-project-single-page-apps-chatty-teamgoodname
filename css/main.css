@@ -112,9 +112,10 @@ input[type="text"] {
 #messageBoard {
 	border: 2px solid lightgray;
 	height: 80em;
+	/*background-color: white;*/
 	width: 85%;
 	margin: 1em 5em 3em 5em;
-	background-color: white;
+
 	font-color: grey;
 	padding: 2em;
 	text-align: left !important;
@@ -126,14 +127,36 @@ input[type="text"] {
 }
 
 
+
 /* DARK THemes */
+.dark {
+	background-color: black !important;
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black !important;	
+}
 
+.dark #addMessageButton {
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black !important;
+}
 
+.dark input {
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black !important;
+}
 
+.dark #clearButton {
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black !important;
+	background-color: darkgreen;	
+}
 
+.dark nav {
+	background-color: darkgrey !important;
+}
 
 
 /* LARGE TEXT VIEW**/
-
+.large-font {
+	font-size: 1.5em;
+	overflow: scroll;
+}
 
 

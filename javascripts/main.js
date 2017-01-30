@@ -30,6 +30,36 @@ newMessage.addEventListener("keyup", function(event) {
     }
 });
 
+// Event Listener for darkCheck and largeCheck- Change theme from light to dark and make font large
+var darkCheck = document.getElementById("dark-theme-select");
+var largeCheck = document.getElementById("large-text-select");
+
+darkCheck.addEventListener("click", makeDark);
+largeCheck.addEventListener("click", makeLarge);
+
+////// Function that toggles the background and text colors
+function makeDark(tomato) {
+	console.log('makeDark wants to run');
+	container.classList.toggle('dark')
+	//debugger
+	var children = container.children;
+	for (var i = 0;i < children.length; i++) {
+		children[i].classlist.toggle('dark')	
+	};
+};
+
+////// Function that toggles the font size of the messages
+function makeLarge(tomato){
+	console.log("makeLarge wants to run");
+    var listOfMessages = document.getElementById("messageBoard");
+    listOfMessages.classList.toggle("large-font");
+    var children = container.children;
+	for (var i = 0;i < children.length; i++) {
+		children[i].classlist.toggle('dark')	
+	};
+};
+
+
 //Event Listener for clearButton - Deactivate clearButton when message list is empty
 var clearButton = document.getElementById("clearButton");
 clearButton.addEventListener("click", function() {
