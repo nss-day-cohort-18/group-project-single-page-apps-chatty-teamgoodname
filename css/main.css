@@ -6,7 +6,7 @@ body {
 
 .navbar {
 	display: block !important;
-	max-width: 95%;
+	max-width: 94%;
 	height: 9em;
 	z-index: 1;
 	max-height: 35%;
@@ -19,7 +19,7 @@ body {
 /*Regular view*/
 nav {
 	display: block;
-	margin: 1em;
+	margin: 2em;
 	background-color: #e5e5e5 !important;
 	padding: .5em;
 }
@@ -38,23 +38,12 @@ nav {
 
 .affix {
 	top: 0;
-	width: 70em;
-	max-width: 94%;
-	max-height: 35%;
-	height: 9em;
-    display: block;
-	margin: 1em;
-	background-color: #e5e5e5;
-	padding: .5em;
-	border-radius: 5px;
+	width: 80em;
+	max-width: 92%;
   }
 
   .affix + .container-fluid {
-    padding-top: 5px;
-    max-width: 99%;
-    max-height: 35%;
-    height: 9em;
-    margin-right: 1em;
+    padding-top: 150px;
   }
 
 .col-xs-12 {
@@ -123,9 +112,10 @@ input[type="text"] {
 #messageBoard {
 	border: 2px solid lightgray;
 	height: 80em;
-	width: 80%;
-	margin: 1em 7em 3em 5em;
 	/*background-color: white;*/
+	width: 85%;
+	margin: 1em 5em 3em 5em;
+
 	font-color: grey;
 	padding: 2em;
 	text-align: left !important;
