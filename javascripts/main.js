@@ -93,7 +93,7 @@ addMessageButton.addEventListener("click", function() {
  	var bodyContainer = document.getElementById("bodyContainer");
  	bodyContainer.classList.toggle("dark");
  	//debugger
- 	var children = container.children;
+ 	var children = messageContainer.children;
  	for (var i = 0;i < children.length; i++) {
  		children[i].classList.toggle("dark");	
  	};
@@ -103,7 +103,7 @@ addMessageButton.addEventListener("click", function() {
  	console.log("makeLarge wants to run");
      var listOfMessages = document.getElementById("messageBoard");
      listOfMessages.classList.toggle("large-font");
-     var children = container.children;
+     var children = messageContainer.children;
  	for (var i = 0; i < children.length; i++) {
  		children[i].classList.toggle("large-font");	
  	};
