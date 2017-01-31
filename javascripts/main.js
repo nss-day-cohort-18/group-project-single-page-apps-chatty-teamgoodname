@@ -53,7 +53,8 @@ addMessageButton.addEventListener("click", function() {
 ////// Function that toggles the background and text colors
  function makeDark(tomato) {
  	console.log('makeDark wants to run');
- 	messageContainer.classList.toggle("dark");
+ 	var bodyContainer = document.getElementById("bodyContainer");
+ 	bodyContainer.classList.toggle("dark");
  	//debugger
  	var children = container.children;
  	for (var i = 0;i < children.length; i++) {
