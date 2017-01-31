@@ -145,6 +145,12 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	messageTextElement.style.display = "inline";
 	messageTextElement.innerHTML = messageText;
 	messageTextElement.style.marginLeft = "5%";
+	messageTextElement.style.fontWeight = "normal";
+	messageTextElement.style.backgroundColor = "lightblue";
+	messageTextElement.style.border = "2px solid lightblue";
+	messageTextElement.style.borderRadius = "20px 20px 20px 7.5px";
+	messageTextElement.style.padding = "2%";
+	messageTextElement.style.marginTop = "50px";
 
 	// Create delete button
 	var deleteButtonElement = document.createElement("INPUT");
@@ -156,6 +162,9 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	deleteButtonElement.style.float = "right";
 	deleteButtonElement.value = "Delete";
 	deleteButtonElement.style.marginTop = "1%";
+	deleteButtonElement.style.fontWeight = "bold";
+	deleteButtonElement.style.fontSize = "smaller";
+	deleteButtonElement.style.borderRadius = "25px 25px 25px 25px";
 
 	var readMessageButton = document.createElement("INPUT");
 	readMessageButton.type="button";
@@ -165,6 +174,9 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	readMessageButton.style.float= "right";
 	readMessageButton.value = "Read Message";
 	readMessageButton.style.marginBottom = "1%";
+	readMessageButton.style.fontWeight = "bold";
+	readMessageButton.style.fontSize = "smaller";
+	readMessageButton.style.borderRadius = "25px 25px 25px 25px";
 
 	// Chatty.getUserMessages();
 	deleteButtonElement.addEventListener("click", Chatty.deleteOneMessageFromArray);
@@ -177,9 +189,13 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	var timeElement = document.createElement("P");
 	timeElement.innerHTML = timeSent;
 	timeElement.style.display = "block";
+	timeElement.style.fontWeight = "lighter";
+	timeElement.style.fontSize = "smaller";
+	timeElement.style.marginTop = "1%";
+
 
 	messageElement.style.marginTop = "1%";
-	messageElement.style.marginBottom = "1%";
+	messageElement.style.marginBottom = "2%";
 	messageElement.style.borderBottom = "1px solid black";
 
 
