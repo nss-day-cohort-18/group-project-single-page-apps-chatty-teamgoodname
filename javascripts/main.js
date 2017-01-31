@@ -63,7 +63,8 @@ addMessageButton.addEventListener("click", function() {
 	}else if(radio2.checked){
 		radioSender = radio2.value;
 	}else{
-		alert("Pleaase identify who you are.")
+		alert("Pleaase identify who you are.");
+		return;
 	};
 
 	// Get new message ID

@@ -11,13 +11,16 @@ body {
 }
 
 .navbar {
-	display: block !important;
+	display: flex !important;
 	width: 100%;
 	max-width: 94%;
+	min-width: 700px;
 	height: 9em;
 	z-index: 1;
 	max-height: 35%;
 	display: block;
+	flex-direction: row;
+	justify-content: center;
 }
 
 ::-webkit-input-placeholder {
@@ -98,7 +101,7 @@ input[type="checkbox"] {
 
 input[type="text"] {
 	width: 35em;
-	max-width: 40%;
+	max-width: 60%;
 	min-width: 20%;
 	height: 40px;
 	border-radius: 3px;
@@ -197,7 +200,26 @@ input[type="text"] {
 
 }
 
-#navbar-nav{
-	width: 1em;
-	display: inline;
+.navbar-nav{
+	width: 100%;
+	display: block;
+	max-width: 94%;
+	min-width: 700px;
+	height: 9em;
+	max-height: 35%;
+	margin-left: 10%;
 }
+
+#dark-theme-select{
+	margin-left: 17%;
+}
+
+/*	display: flex !important;
+	width: 100%;
+	max-width: 94%;
+	height: 9em;
+	z-index: 1;
+	max-height: 35%;
+	display: block;
+	flex-direction: row;
+	justify-content: space-around;*/
