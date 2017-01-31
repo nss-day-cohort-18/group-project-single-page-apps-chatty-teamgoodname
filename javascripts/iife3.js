@@ -1,7 +1,4 @@
-
 var Chatty = (function(oldChatty){
-
-	
 	oldChatty.deleteOneMessageFromDOM = function (event){
 		var idIndex = ((event.target.id).substring(8, 9)).toString();
 		var messageToDelete = document.getElementById("message--" + idIndex);
@@ -31,6 +28,5 @@ var Chatty = (function(oldChatty){
 			userMessages[i].id = i;
 		}
 	};
-
 	return oldChatty;
 })(Chatty || {});
