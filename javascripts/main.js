@@ -37,15 +37,11 @@ function usersRetrieved(event){
 	user1.style.marginRight = "10px";
 	user2.style.marginRight = "10px";
 
-	// user1.style.marginLeft = "1%";
-	// user2.style.marginLeft = "1%";
-
 	var userData = JSON.parse(event.target.responseText);
 
 	user1.innerHTML = userData[0].user_name;
 	user2.innerHTML = userData[1].user_name;
 };
-
 
 
 // Add new message event listener
@@ -90,7 +86,6 @@ addMessageButton.addEventListener("click", function() {
  
 ////// Function that toggles the background and text colors
  function makeDark(tomato) {
- 	console.log('makeDark wants to run');
  	var bodyContainer = document.getElementById("bodyContainer");
  	bodyContainer.classList.toggle("dark");
  	//debugger
@@ -101,7 +96,6 @@ addMessageButton.addEventListener("click", function() {
  };
  ////// Function that toggles the font size of the messages
  function makeLarge(tomato){
- 	console.log("makeLarge wants to run");
      var listOfMessages = document.getElementById("messageBoard");
      listOfMessages.classList.toggle("large-font");
      var children = messageContainer.children;
@@ -129,7 +123,6 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	// Create <div> element to hold each message
 	var messageElement = document.createElement("DIV");
 
-
 	messageElement.id = "message--" + messageIdNumber;
 	messageElement.className = "col-sm-12";
 
@@ -137,7 +130,8 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	var nameElement = document.createElement("P");
 	nameElement.className = "messageElement";
 	nameElement.style.display = "inline";
-	nameElement.innerHTML = nameOfPerson/*.bold()*/ + " wrote: ";
+	nameElement.innerHTML = nameOfPerson + " wrote: ";
+	nameElement.style.fontSize = "larger";
 
 	// Create paragraph element to hold the message content
 	var messageTextElement = document.createElement("P");
@@ -162,7 +156,6 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	deleteButtonElement.style.float = "right";
 	deleteButtonElement.value = "Delete";
 	deleteButtonElement.style.marginTop = "1%";
-	deleteButtonElement.style.fontWeight = "bold";
 	deleteButtonElement.style.fontSize = "smaller";
 	deleteButtonElement.style.borderRadius = "25px 25px 25px 25px";
 
@@ -173,8 +166,7 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	readMessageButton.style.display = "inline";
 	readMessageButton.style.float= "right";
 	readMessageButton.value = "Read Message";
-	readMessageButton.style.marginBottom = "1%";
-	readMessageButton.style.fontWeight = "bold";
+	readMessageButton.style.marginBottom = "5%";
 	readMessageButton.style.fontSize = "smaller";
 	readMessageButton.style.borderRadius = "25px 25px 25px 25px";
 
@@ -187,14 +179,14 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 
 	// Create paragraph element to hold the time that the message is sent
 	var timeElement = document.createElement("P");
-	timeElement.innerHTML = timeSent;
+	timeElement.innerHTML = timeSent.italics();
 	timeElement.style.display = "block";
 	timeElement.style.fontWeight = "lighter";
 	timeElement.style.fontSize = "smaller";
 	timeElement.style.marginTop = "1%";
 
 
-	messageElement.style.marginTop = "1%";
+	messageElement.style.marginTop = "2%";
 	messageElement.style.marginBottom = "2%";
 	messageElement.style.borderBottom = "1px solid black";
 
@@ -213,8 +205,6 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 function populateMessages(messages){
 	messageContainer.innerHTML = "";
 
-	console.log("About to Populate Messages into DOM:\n", messages);
-
 	for(var i = 0 ; i < messages.length; i++){
 		var newMessageId = "message--" + i.toString();
 		var newButtonId = "button--" + i.toString();
@@ -227,25 +217,18 @@ function populateMessages(messages){
 		//document.getElementById("delete--" + i).addEventListener("click", Chatty.deleteOneMessageFromArray);
 
 	}
-	console.log("DOM Populated");
 
 };
 
 // Ability to edit messages
-
 function editMessages(event) {
 
 var newMessage = document.getElementById("newMessage");
 var messageElement = document.getElementsByClassName("messageElement");
 var messageText = newMessage.value;
-console.log(Chatty.getCurrentMessages().length);
-
 
 var idIndex = ((event.currentTarget.id).substring(9, 10)).toString();
 var messageToDelete = document.getElementById("message--" + idIndex);
-
-//messageElement[idIndex].addEventListener("click", addBorder);
-//messageElement[idIndex].addEventListener("click", addFocus);
 
 addBorder(messageToDelete);
 addFocus(messageToDelete);
