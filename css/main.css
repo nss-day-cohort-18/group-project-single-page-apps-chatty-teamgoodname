@@ -46,7 +46,7 @@ nav {
 	min-height: 20em;
 	background-image: url(../images/teamgoodName.png);
 	background-repeat: no-repeat !important;
-	background-size: 400px;
+	background-size: 35em;
 	background-position: center;
 }
 
@@ -186,7 +186,7 @@ input[type="text"] {
 
 /* LARGE TEXT VIEW**/
 .large-font p {
-	font-size: 1.5em;
+	font-size: 2.0em;
 	word-wrap: break-word;
 
 }
