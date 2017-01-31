@@ -1,6 +1,3 @@
-
-
-
 // The Initial Chatty Object
 var Chatty = (function(){
 	var jsonMessages = [];
