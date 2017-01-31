@@ -10,7 +10,6 @@ var Chatty = (function(oldChatty){
 
 	oldChatty.addMessageToArray = function(id, nameOf, messageText, time){
 		var messages = oldChatty.getJsonMessages();
-		// var newElement = createMessageElement(id, nameOf, messageText, time);
 		var newMessageObject = {
 			message: messageText,
 			name: nameOf,

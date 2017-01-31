@@ -10,7 +10,6 @@ var Chatty = (function(oldChatty){
 		var messageToRead = document.getElementById("message--" + idIndex);
 		var x = messageToRead.childNodes[0].childNodes[0].nodeValue;
 		var y = x + messageToRead.childNodes[1].childNodes[0].nodeValue;
-		console.log(event.target.id);
 		responsiveVoice.speak(y, "UK English Male", {rate: 0.8});
 	}
 
@@ -18,9 +17,7 @@ var Chatty = (function(oldChatty){
 		var userMessages = Chatty.getCurrentMessages();
 		for(var i = 0; i < userMessages.length; i++){
 			if(("delete--" + userMessages[i].id).toString() == event.target.id){
-				console.log("Msg[i]: ", userMessages[i]);
 				userMessages.splice(i, 1);
-				console.log("NEW: ", userMessages);
 			}
 		}
 		// Reset ids in the array
