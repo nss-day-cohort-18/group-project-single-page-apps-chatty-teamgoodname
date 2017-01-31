@@ -160,7 +160,8 @@ input[type="text"] {
 }
 
 .border {
-	border: 2px dotted blue !important;
+	border: 3px dotted blue !important;
+	border-radius: 5px;
 	padding: 10px;
 	margin-bottom: 10px;
 }
