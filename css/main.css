@@ -4,6 +4,12 @@ body {
 	font-family: 'Varela Round', sans-serif;
 }
 
+.jsButtons {
+	border: 2px solid darkgrey;
+	border-radius: 5px;
+	background-color: lightgrey;
+}
+
 .navbar {
 	display: block !important;
 	width: 80em;

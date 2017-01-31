@@ -112,6 +112,7 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	deleteButtonElement.type="button";
 	deleteButtonElement.id = "delete--" + messageIdNumber;
 	deleteButtonElement.className = "messageElement";
+	deleteButtonElement.className +=" jsButtons"
 	deleteButtonElement.style.display = "inline";
 	deleteButtonElement.style.float = "right";
 	deleteButtonElement.value = "Delete";
@@ -119,6 +120,7 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 
 	var readMessageButton = document.createElement("INPUT");
 	readMessageButton.type="button";
+	readMessageButton.className +="jsButtons"
 	readMessageButton.id="read--" + messageIdNumber;
 	readMessageButton.style.display = "inline";
 	readMessageButton.style.float= "right";
