@@ -13,6 +13,12 @@ body {
 	max-height: 35%;
 }
 
+::-webkit-input-placeholder {
+	color: grey;
+}
+
+
+
 .navbar-inverse {
 	max-height: 35%
 }
@@ -28,6 +34,11 @@ nav {
 #logoBox {
 	display: block;
 	margin-top: 1em;
+	min-height: 20em;
+	background-image: url(../images/teamgoodName.png);
+	background-repeat: no-repeat !important;
+	background-size: 400px;
+	background-position: center;
 }
 
 #logoImg {
@@ -132,9 +143,14 @@ input[type="text"] {
 
 /* DARK THemes */
 .dark {
-	background-color: black !important;
+	background-color: #363534 !important;
 	color: white;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black !important;	
+}
+
+.dark ::-webkit-input-placeholder {
+	color: grey;
+	text-shadow: none;
 }
 
 .dark #addMessageButton {
@@ -151,7 +167,11 @@ input[type="text"] {
 }
 
 .dark nav {
-	background-color: darkgrey !important;
+	background-color: grey !important;
+}
+
+.dark #logoBox {
+	background-image: url(../images/teamgoodName_copy.png);
 }
 
 
