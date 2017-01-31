@@ -39,8 +39,8 @@ addMessageButton.addEventListener("click", function() {
 	var today = new Date();
 	var time = today.getHours() + ":" + today.getMinutes() + " pm";
 
-	Chatty.addMessage(idIndex, nameOfSender, messageText, time);
-	Chatty.populateDOM(idIndex, nameOfSender, messageText, time);
+	Chatty.addMessageToArray(idIndex, nameOfSender, messageText, time);
+	Chatty.addMessageToDOM(idIndex, nameOfSender, messageText, time);
 });
 
 // Event Listener for darkCheck and largeCheck- Change theme from light to dark and make font large
