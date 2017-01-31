@@ -4,6 +4,8 @@ body {
 	font-family: 'Varela Round', sans-serif;
 }
 
+p
+
 .jsButtons {
 	border: 2px solid darkgrey;
 	border-radius: 5px;
@@ -131,9 +133,17 @@ input[type="text"] {
 	display: block;
 }
 
+#messageBoardNote {
+	margin-right: 1em;
+	margin-left: 2em;
+	font-size: 15px;
+	text-align: left;
+	display: block;
+}
+
 #messageBoard {
 	border: 2px solid lightgray;
-	height: 80em;
+	height: 100%;
 	/*background-color: white;*/
 	width: 85%;
 	margin: 1em 5em 3em 5em;
@@ -148,6 +158,11 @@ input[type="text"] {
 	float: right;
 }
 
+.border {
+	border: 2px dotted blue !important;
+	padding: 10px;
+	margin-bottom: 10px;
+}
 
 
 /* DARK THemes */
