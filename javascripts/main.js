@@ -73,9 +73,10 @@ addMessageButton.addEventListener("click", function() {
  };
 
 
-newMessage.addEventListener("keyup", function(event) {
+document.getElementById("newMessage")
+	.addEventListener("keyup", function(event) {
     event.preventDefault();
-    if (event.keyCode == 13) {
+    if (event.keyCode == 13 && classList.contains("border")) {
         document.getElementById("addMessageButton").click();
     }
 });
@@ -149,6 +150,7 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	messageElement.appendChild(deleteButtonElement);
 	messageElement.appendChild(timeElement);
 	messageElement.appendChild(readMessageButton);
+	messageElement.addEventListener("click", editMessages);
 
 	
 
@@ -176,6 +178,58 @@ function populateMessages(messages){
 	console.log("DOM Populated");
 
 };
+
+// Ability to edit messages
+
+function editMessages(event) {
+
+var newMessage = document.getElementById("newMessage");
+var messageElement = document.getElementsByClassName("messageElement");
+var messageText = newMessage.value;
+console.log(Chatty.getCurrentMessages().length);
+
+
+var idIndex = ((event.currentTarget.id).substring(9, 10)).toString();
+var messageToDelete = document.getElementById("message--" + idIndex);
+
+//messageElement[idIndex].addEventListener("click", addBorder);
+//messageElement[idIndex].addEventListener("click", addFocus);
+
+addBorder(messageToDelete);
+addFocus(messageToDelete);
+}
+
+function addBorder(message) {
+	message.value = "";
+	message.classList.toggle("border");
+}
+
+function addFocus(message) {
+	newMessage.focus();
+}
+
+
+//edit message
+newMessage.addEventListener("keyup", edit);
+
+function edit(event) {
+	var children = messageContainer.childNodes
+
+	for (var l=0; l<children.length; l++) {
+		if (children[l].classList.contains("border")) {
+			children[l].childNodes[1].innerHTML = document.getElementById("newMessage").value;
+		}
+	}
+	if (event.keyCode == 13) {
+		newMessage.value = "";
+	}
+}
+
+
+
+//END
+
+
 
 
 
