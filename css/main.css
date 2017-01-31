@@ -29,8 +29,6 @@ p
 	color: grey;
 }
 
-
-
 .navbar-inverse {
 	max-height: 35%;
 
@@ -70,7 +68,7 @@ nav {
   }
 
   .affix + .container-fluid {
-    padding-top: 190px;
+    padding-top: 180px;
   }
 
 .col-xs-12 {
