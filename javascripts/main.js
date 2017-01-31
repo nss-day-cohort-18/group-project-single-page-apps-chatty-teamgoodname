@@ -2,10 +2,15 @@ var addMessageButton = document.getElementById("addMessageButton");
 var messageContainer = document.getElementById("messageBoard");
 
 var request = new XMLHttpRequest();
+var userRequest = new XMLHttpRequest();
 
 request.addEventListener("load", requestCompleted);
+userRequest.addEventListener("load", usersRetrieved);
 
 request.open("GET", "chatty.json");
+userRequest.open("GET", "users.json");
+
+userRequest.send();
 request.send();
 
 // Event handler for when JSON file is loaded
@@ -22,6 +27,25 @@ function requestCompleted(event){
 	// populateInitialMessages();
 };
 
+function usersRetrieved(event){
+	var user1 = document.getElementById("user1");
+	var user2 = document.getElementById("user2");
+
+	user1.style.display = "inline";
+	user2.style.display = "inline";
+
+	user1.style.marginRight = "10px";
+	user2.style.marginRight = "10px";
+
+	// user1.style.marginLeft = "1%";
+	// user2.style.marginLeft = "1%";
+
+	var userData = JSON.parse(event.target.responseText);
+
+	user1.innerHTML = userData[0].user_name;
+	user2.innerHTML = userData[1].user_name;
+};
+
 
 
 // Add new message event listener
@@ -29,10 +53,23 @@ addMessageButton.addEventListener("click", function() {
 	var newMessage = document.getElementById("newMessage");
 	var newMessageSenderName = document.getElementById("newMessageName");
 
+	var radio1 = document.getElementById("userRadio1");
+	var radio2 = document.getElementById("userRadio2");
+
+	var radioSender = "";
+
+	if(radio1.checked){
+		radioSender = radio1.value;
+	}else if(radio2.checked){
+		radioSender = radio2.value;
+	}else{
+		alert("Pleaase identify who you are.")
+	};
+
 	// Get new message ID
 	var idIndex = messageContainer.children.length;
 	// Get name
-	var nameOfSender = newMessageSenderName.value;
+	var nameOfSender = radioSender;
 	// Get message text
 	var messageText = newMessage.value;
 	// Get Time
@@ -149,8 +186,6 @@ function createMessageElement(messageIdNumber, nameOfPerson, messageText, timeSe
 	messageElement.appendChild(deleteButtonElement);
 	messageElement.appendChild(timeElement);
 	messageElement.appendChild(readMessageButton);
-
-	
 
 	return messageElement;
 };

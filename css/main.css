@@ -12,11 +12,12 @@ body {
 
 .navbar {
 	display: block !important;
-	width: 80em;
+	width: 100%;
 	max-width: 94%;
 	height: 9em;
 	z-index: 1;
 	max-height: 35%;
+	display: block;
 }
 
 ::-webkit-input-placeholder {
@@ -26,13 +27,15 @@ body {
 
 
 .navbar-inverse {
-	max-height: 35%
+	max-height: 35%;
+
 }
 
 /*Regular view*/
 nav {
 	display: block;
 	margin: 2em;
+	width: 100%;
 	background-color: #e5e5e5 !important;
 	padding: .5em;
 }
@@ -188,4 +191,13 @@ input[type="text"] {
 
 }
 
+#newMessage{
+	width: 100%;
+	display: inline;
 
+}
+
+#navbar-nav{
+	width: 1em;
+	display: inline;
+}

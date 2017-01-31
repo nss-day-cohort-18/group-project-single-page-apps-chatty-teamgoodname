@@ -24,15 +24,23 @@
 			
 	<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="250"> 
 		<div class="nav navbar-nav">
-			<input role="presentation" id="newMessageName" type="text" placeholder="Enter your name">
+
+
+			<label><span id="user1"></span><input type="radio" value="John" id="userRadio1" name="users"></label>
+			<label><span id="user2"></span><input type="radio" value="Sarah" id="userRadio2" name="users"></label>
+
 			<input role="presentation" id="newMessage" type="text" placeholder="Enter message">
+			
 			<button id="addMessageButton">+</button><br>
 			
 			<input role="presentation" type="checkbox" id="dark-theme-select">
 			<label>Dark Theme</label>
 			<input role="presentation" type="checkbox" id="large-text-select">
 			<label>Large Text</label>
+
+
 			<button class="clear-messages" id="clearButton" type="clear">Clear Message Board</button>
+
 		</div>
 	</nav>
 
@@ -40,12 +48,7 @@
 		<label for="messageBoard" id="messageBoardTitle">Messages:</label>
 		<div name="messageBoard" id="messageBoard" class="col-xs-12 container-fluid">
 
-			<div class="col-sm-12" id=${newMessageId}>
-				<p style="display:inline"><strong>John</strong></p>
-				<p style="display:inline"> --> Hey whats up</p>
-				<input style="display:inline" type="button" value="Delete" id="buttonId" class="deleteButton"></input>
-				<p><small>6:09 pm</small></p>
-			</div>
+
 		</div>
 	</div>
 
